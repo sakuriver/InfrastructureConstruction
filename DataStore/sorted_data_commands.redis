@@ -1,0 +1,21 @@
+
+# ゴール時間でソートして並び変える
+# 2分20秒でゴールしている場合
+ZADD racegoals 140 "Cool Blue Mario"
+ZADD racegoals 143 "Cool Liige"
+ZADD racegoals 144 "Nokonoko "
+ZADD racegoals 148 "DonkyKong"
+ZADD racegoals 148 "Coopa"
+
+# データ投入後の並び替え淳で表示をする
+ZRANGE racegoals 0 -1
+
+# 最終ソート取得結果
+1) "Cool Blue Mario"
+2) "Cool Liige"
+3) "Nokonoko "
+4) "Coopa"
+5) "DonkyKong"
+
+# 上位３人の入場者情報を設定する。
+ZRANGE racegoals 0 2

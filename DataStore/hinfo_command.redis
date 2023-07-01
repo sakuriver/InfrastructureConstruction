@@ -1,0 +1,21 @@
+# 更新頻度が低い公開プロフィール情報を修正
+## 名前、現住所、自己紹介コメント
+
+HSET user_temp:20020 name      "George Crypton"
+HSET user_temp:20020 email     "test@example.com"
+HSET user_temp:20020 password  "123orsp"
+
+## プロフィール情報を全てRedisメモリから取得
+HGETALL user_temp:20020
+
+## 取得結果一覧
+1) "name"
+2) "George Crypton"
+3) "email"
+4) "test@example.com"
+5) "password"
+6) "123orsp"
+
+## 各種一覧のリスト情報ように特定プロフィールデータ
+HGET user_temp:20020 name
+

@@ -1,0 +1,21 @@
+# 特定イベントの部屋一覧に人を追加する
+RPUSH friends:event:2000 "yuuma_"
+RPUSH friends:event:2000 "suzuki_tarou"
+RPUSH friends:event:2000 "akita_ruo"
+RPUSH friends:event:2000 "totigi_kenta"
+
+# 指定した部屋のメンバー一覧を追加する(get rpush data)
+LRANGE friends:event:2000 0 -1 
+
+# コンソールごとの出力例(llarnge list result)
+
+1) "yuuma_"
+2) "suzuki_tarou"
+3) "akita_ruo"
+4) "totigi_kenta"
+
+# 会議終了で一人ずつ退出処理を実施
+# 入出中の人数を取得
+LLEN friends:event:2000
+# 一人ずつ退出設定
+RPOP friends:event:2000
