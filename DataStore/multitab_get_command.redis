@@ -1,0 +1,13 @@
+# TOPメンバーアカウントキー
+SET topKey "SatouYuuzi"
+
+# セカンドメンバーアカウントキー
+SET secondKey "KikuchiYuuta"
+
+# 今回のユーザーが２タブ保持している一覧を統合して「すべてのタブ一覧」として設定
+MGET topKey secondKey
+
+出力結果一覧
+
+1) "SatouYuuzi"
+2) "KikuchiYuuta"

@@ -1,0 +1,13 @@
+
+
+# マルチプレイヤーの制限時間形式のアプリについて、セットアップ
+SET multimodetimelimit 180
+
+# サーバー側の常駐処理で時間を減算する（マルチプレイ用の常駐処理）
+DECR multimodetimelimit
+DECR multimodetimelimit
+DECR multimodetimelimit
+
+# 途中切断時のルールに基づいて数秒だけ減らして再開
+DECRBY multimodetimelimit 10
+

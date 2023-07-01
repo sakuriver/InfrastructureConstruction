@@ -1,0 +1,10 @@
+# 特定アカウントのプレイ情報をメモリでもって記録更新する場合
+HSET user:parkplay:200 gamenum 0
+
+# ミニゲームを一回プレイ
+HGET user:parkplay:200 gamenum 1
+# ポイント10回分のミニゲームをプレイ
+HGET user:parkplay:200 gamenum 10
+# ミニゲームのクロージング処理でプロフィールのメモリからキーのみを削除
+HDEL user:parkplay:200 gamenum
+

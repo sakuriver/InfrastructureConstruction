@@ -1,0 +1,16 @@
+# 部屋退出後は、アイコンの表示用に10秒のみデータ保持する
+set display_icon_chat_timelimit:2000
+expire display_icon_chat_timelimit:2000 10
+
+# chatとして各秒ごとにアイコンの表示状況をクライアント側に秒数を送信する
+ttl display_icon_chat_timelimit:2000
+ttl display_icon_chat_timelimit:2000
+ttl display_icon_chat_timelimit:2000
+ttl display_icon_chat_timelimit:2000
+ttl display_icon_chat_timelimit:2000
+ttl display_icon_chat_timelimit:2000
+
+
+# セッションが途切れて退出確認出来た後の値確認
+get display_icon_chat_timelimit:2000
+
