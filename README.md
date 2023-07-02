@@ -1,2 +1,5 @@
 # InfrastructureConstruction
 インフラにかかわる実験場 データストアと各種低レイヤー関連
+
+# 検討事項
+カレンダーコマンドがpowershellとbashで違うので、吸収コマンドは作るとしたら別途振り分けも
